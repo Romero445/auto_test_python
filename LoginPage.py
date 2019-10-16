@@ -17,14 +17,10 @@ class LoginGameMag(unittest.TestCase):
         self.driver.implicitly_wait(20)
 
     def test_login(self):
-        self.logoButton = self.driver.find_element_by_xpath("//button[@class = 'gm-btn gm-btn--login'] //span[@class='gm-btn__login-img gm-btn__login-img--passive gm-btn__logout__img']")
-        try:
-            self.logoButton.click()
-            self.log.info("Вы нажали кнопку")
-        except NoSuchElementException:
-            self.log.info("Вы нажали кнопку")
-            pass
-
+        self.logoButton = self.driver.find_element(By.XPATH,"//button[@class = 'gm-btn gm-btn--login'] //span[@class='gm-btn__login-img gm-btn__login-img--passive gm-btn__logout__img']")
+        self.logoButton.click()
+        self.log.info("Вы нажали кнопку")
+        
         self.clearLoggin = self.driver.find_element(By.ID, "login-form-login").clear()
         self.log.info("Поле чистое")
 
