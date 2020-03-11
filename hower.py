@@ -6,7 +6,7 @@ import time
 
 class Test():
 
-    def hover(self):
+    def Hover(self):
         baseUrl = "https://www.lamoda.ru/men-home/"
         driver = webdriver.Firefox()
         driver.get(baseUrl)
@@ -31,4 +31,4 @@ class Test():
 
 
 ff = Test()
-ff.hover()
+ff.Hover()
