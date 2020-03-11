@@ -12,18 +12,18 @@ class Test():
         driver.get(baseUrl)
         driver.implicitly_wait(15)
 
-        elment = driver.find_element(By.XPATH, "//div[@id='menu']//span[text()='Новинки']")
+        elmentHover = driver.find_element(By.XPATH, "//div[@id='menu']//span[text()='Новинки']")
         itemToClick = "//div[@id='menu-dropdowns__wrapper']//a[text()='Одежда']"
         try:
             action = ActionChains(driver)
-            action.move_to_element(elment).perform()
+            action.move_to_element(elmentHover).perform()
             print('Hovered')
 
             time.sleep(3)
 
             topLink = driver.find_element(By.XPATH, itemToClick)
             action.move_to_element(topLink).click().perform()
-            print('clicked')
+            print('Clicked')
         except:
             print('No')
 
